@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CMMS2015.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title>CMMS Application</title>
+    <link href="App_Themes/MainTheme/main.css" rel="stylesheet" type="text/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body>
+    <form runat="server">       
+            <div class="content-wrapper">
+                    <table style="height:auto; width:100%;">                      
+                        <tr>
+                            <td align="left">
+                                <table height="100%" cellspacing="0" cellpadding="0" width="100%">
+                                    <tr>
+                                        <td>
+                                            <div class="float-left">
+                                               <asp:HyperLink id="lkHome" runat="server" NavigateUrl="http://orf.od.nih.gov"><asp:Image ImageUrl="Images/NIH_logo_new.png" runat="server" BorderStyle="None" /></asp:HyperLink>
+                                            </div>
+                                        </td>
+                                    </tr>                                   
+                                </table>
+                            </td>
+                            <td class="appTitle"><br />
+                                <%= ConfigurationManager.AppSettings["ApplicationTitle"].ToString()%>
+                            </td>
+                            <td><br /><br />
+                                <a href="http://orfweb.od.nih.gov/safety/Pages/default.aspx" target="_blank"><asp:Image ID="imgSaftyLogo" runat="server" ImageUrl="~/Images/SafetyFirstLogo.jpg" BorderColor="Yellow" BorderWidth="1"/></a>
+                       
+                            </td> 
+                        </tr>
+                    </table>
+            </div>
+       
+
+        
+           
+        <div id="wrapper">
+            <div id="outer">
+                <div id="center">
+
+                    <!-- main content -->
+                    <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+                    <section class="content-wrapper main-content clear-fix">
+                        <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+                    </section>
+                    <%--<table width="500" border="0" cellpadding="0" cellspacing="">
+                        <tr>
+                            <td class="baseTL"></td>
+                            <td class="baseTop"></td>
+                            <td class="baseTR"></td>
+                        </tr>
+                        <tr>
+                            <td class="baseLSide"></td>
+                            <td class="baseContent">test</td>
+                            <td class="baseRSide"></td>
+                        </tr>
+                        <tr>
+                            <td class="baseBL"></td>
+                            <td class="baseBTTM"></td>
+                            <td class="baseBR"></td>
+                        </tr>
+                    </table>--%>
+                </div>
+            </div>
+        </div>
+                   
+        <div id="footer">
+                
+                                Contact: <%= ConfigurationManager.AppSettings["POCNames"].ToString()%>  &nbsp;&nbsp;
+			                    Email: <A href='mailto:<%= ConfigurationManager.AppSettings["POCEmail"].ToString()%>?Subject=<%= ConfigurationManager.AppSettings["ApplicationTitle"].ToString()%> Version'><u><%= ConfigurationManager.AppSettings["POCNames"].ToString()%></u></A> &nbsp;
+			                   Tel: <%= ConfigurationManager.AppSettings["POCPhone"].ToString()%><br />                     
+                                Copyright &copy;2015, OD/ORF. All Rights Reserved. 
+           
+       
+        </div>
+        
+    </form>
+</body>
+</html>

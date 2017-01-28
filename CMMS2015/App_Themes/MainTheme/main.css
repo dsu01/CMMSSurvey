@@ -1,0 +1,914 @@
+﻿html,body
+{
+	margin:0px;
+	padding:0px;
+	border:0;
+	background:url(../../Images/bg_login.jpg) #f8b149 repeat-x fixed;
+    /*url(../../Images/Yellow_bg.jpg)*/
+}
+
+body {	
+	/*font-family:Verdana, Arial, Helvetica, sans-serif;
+	the follwing is useless in IE, works only in Mozila
+	font-size:.7em;*/
+	font-family:Verdana, Arial, Helvetica, sans-serif;	
+	width: 1200px;
+   
+    margin: 0 auto !important;
+    background-color:#f8b149;
+	/*height: 100%; wrong*/
+}
+
+/* Div Areas */
+#fullheightcontainer
+{
+ 
+  position:relative;
+  width:98%; 
+  height:98%; 
+  min-height:98%;
+  /*overflow:hidden;this is bad, cannot scroll down this is very important, otherwise the content will be out of parent box*/
+}
+
+/* Note: the <form> element make the height 100% don't work, so need to add into form class */
+.formFullSize
+{
+	width:100%;
+	height:100%;
+}
+
+#wrapper
+{
+ 
+ height:100%;
+ background-color: white; /* in I.E leftNav still have short*/
+ 
+}
+
+#banner
+{
+  z-index:1; /*** Critical value for Moz/Opera Background Column colors fudge to work ***/
+  position:relative;
+  top:0px;
+  width:100%; /*** Set to Left Col (not if left sidebar fully intrudes into header or left sidebar is off)
++ Right Col (not if right sidebar fully intrudes into header or right sidebar is off) + Center Col + Both Inner
+Borders (not if any sidebar intrudes into header or footer, or Inner Borders are off) + Both External Borders
+(not if external borders are off) ***/
+  /***height:80px;  = Top Margin + One Outer Border + header to body divider depth +
+subheader1 height + any other subheader heights ***/
+  height: 50px; 
+ /* background: #aa0011 url(../../Images/img_Header.gif) top left no-repeat;  */
+ background-color:#e8941a;
+border-bottom:solid 3px #999999
+}
+
+#outer
+{
+  z-index:1; /*** Critical value for Moz/Opera Background Column colors fudge to work ***/
+  position:relative; /*** IE needs this or the contents won't show outside the parent container. ***/
+  /***margin-left:170px;  Critical left col dimension value = left col width ***/
+   /*** Critical left and right col/divider dimension value (moves inversly) = center col width ***/
+  /*** border-right:1px solid #000000; Sets the internal right side border. ***/
+   /***Sets the internal left side border. ***/
+  /*** background:#eef6f7;  Sets background of center col***/  
+   height:100%; /*otherwise the middle part in extending out*/
+   min-height:500px;
+ 
+  margin:5px;
+
+  
+}
+#leftNav 
+{   
+  width:170px; /*** Critical left col/divider dimension value = Left Col Width + 1px + One Internal Border Width ***/
+  float : left; 
+  background-color:#d3d3d3;	
+  height:100%;
+ min-height:630px;
+  display:inline;
+  position:relative; /*** IE needs this or the contents won't show
+outside the parent container. ***/
+  margin-left:-170px; /***!!!Important, otherwise all move to content. Critical left col/divider dimension value = left col width + one internal border width ***/
+  /*border:solid 1px #999999;*/
+  font-size: 20px;
+   
+}
+#center 
+{
+  /*font-family: Verdana, Arial, Helvetica, sans-serif; 
+  height: 100%;need it or shift down*/
+   /*** Set to = center col width ***/
+
+  display:inline;
+/* \*/
+  
+  vertical-align:top;
+
+/* Hidden from IE-mac */
+ 
+}
+
+	
+#fsSearch
+{
+	width:100%;
+	background-color:#eeeeee;
+	padding: 3px;
+	}
+
+
+	
+.legendText
+{
+	font-weight:bold;
+	font-size: 9pt;
+	color:#f47b20;
+	}
+#warningscreen {
+background-color:#EEF6F7;
+
+width:480px;
+min-height:380px;
+
+font-size: 15px;
+}
+
+#warningscreen legend {
+	font-size: 13px;
+	font-weight: bold;
+	text-transform:uppercase;
+	color: #BA3516;
+	}
+
+#warningscreen form p {
+	font-size: 11px;
+	line-height: 120%;
+	padding-top:5px;
+	
+	font-weight: normal;
+	
+	}
+
+#warningscreen fieldset {
+	width:450px;
+	margin-left:10px;
+	margin-right:3px;
+	background-color: #EEF6F7;
+	padding:5px;
+	}
+ 
+ #divAutoComp
+ {
+ 	background-color: #999999;
+ 	color:White;
+ 	left: 0px; 
+ 	top: 0px; 
+ 	position: absolute; 
+ 	z-index: 1
+ 	}
+ td.loginbaseTL {
+	background: url(../../Images/box_logintopleft.gif);/*top left corner*/
+	width: 23px;
+	height: 23px;
+}
+td.loginbaseTop {
+	background: url(.. /*Table, grid*/
+/../Images/box_logintop.gif);/*top border line*/
+}
+td.loginbaseTR {
+	background: url(../../Images/box_logintopright.gif);/*top right corner*/
+	width: 23px;
+}
+td.baseTL {
+	background: url(../../Images/box_topleft.gif);/*top left corner*/
+	width: 23px;
+	height: 14px;
+}
+
+td.baseTop {
+	background: url(../../Images/box_bkgdtop.gif);/*top border line*/
+
+}
+td.baseTR {
+	background: url(../../Images/box_topright.gif);/*top right corner*/
+	width: 23px;
+}
+td.baseRSide {
+	background: url(../../Images/box_bkgdright.gif);/*right border line*/
+}
+td.baseBR {
+	background: url(../../Images/box_bttmright.gif);/*bottom right corner*/
+	width: 23px;
+}
+
+
+td.baseBTTM {
+	background: url(../../Images/box_bkgdbttm.gif);/*bottom border line*/
+}
+td.baseBL {
+	background: url(../../Images/box_bttmleft.gif);/*bottom left corner*/
+	height: 23px;
+	width: 23px;
+}
+td.baseLSide {
+	background: url(../../Images/box_bkgdleft.gif);/*left border line*/
+}
+    table.lightGreyTop {
+	background: url(../../Images/login_bkgd2.jpg);
+}
+.QueryDataTable 
+{	width:90%;	
+ 	padding:5px;
+ 	border:solid 1px #A0A0D0;
+ 	background-color:White 		
+	
+}
+
+.ReportQueryTable 
+{	width:100%;	
+ 	padding:5px;
+ 	border:solid 1px #A0A0D0;
+ 	background-color:#eeeeee; 		
+	
+}
+
+.tblInsideTab
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	Font-Size: 100%;
+ 	
+	}
+.GridViewHeader
+{ 
+	 Font-Weight:bold;
+	 color:#000;
+	 Font-Size:.9em;
+	/*  Color:#4b4d4e; background-../../Images: url(../../Imagess/bg_gridviewheader.jpg);*/
+
+	 text-align:center;
+	 background-color:#cccccc;
+	
+	/*  the following fix header scroll;
+	position:relative ; 
+   top:expression(this.offsetParent.scrollTop); 
+   z-index: 10;  */
+	}
+
+
+.GridViewHeader a
+{
+    text-decoration: none;
+   
+		 
+}
+
+.GridViewHeader a:hover
+{
+    text-decoration: underline;
+    background: white;
+    color:Green;
+}
+
+.GridViewText
+{
+	
+    font: .9em Verdana, sans-serif;
+		color: #000000;
+	
+		text-align:left;
+				
+}
+  table.sub 
+  {
+	background-../../Images: url(../../Images/login_bkgd2.jpg);
+}
+
+ table.rightNav 
+  {
+  	width:186px;
+	/*background-../../Images: url(../../Images/login_bkgd2.jpg);*/
+	background: url(../../Images/bkgd_form.png);
+	border:solid 1px #999;
+}
+table.rightNav td
+{
+	margin: 0 0 0 10px;
+	/*padding: 2px 15px 10px 18px;*/
+	color: #000;
+	font-family: Verdana, sans-serif;
+	font-size: 10px;
+	width:170px;
+	/*background: url(../../Images/arrow4.gif) no-repeat 0 3px;*/
+	text-align:left;
+	}
+	table.rightNav td.redheading
+{
+	margin: 0 0 10px 0;
+	padding: 10px 10px 10px 10px;
+	font-size: .7em;
+	font-weight:bold;
+	text-align:center;
+	color: #BA3516;
+	border-bottom: 1px solid #999;
+}
+ /*end of table grid*/
+ 
+/*Text Area*/
+a {
+	text-decoration: none;	
+}
+a:hover {
+	text-decoration: underline;
+}
+
+.TitleLink {
+    text-decoration: none;	
+    color: #333;
+    vertical-align: bottom;
+    font-size: 26px;
+    text-emphasis-color:#999;
+    font-weight:bold;
+}
+fieldset
+{
+    font-size:.8em;
+	}
+.actionBtn
+{
+ 
+	margin: 0 0 0 5px;
+	padding: 2px 5px 5px 18px;
+	color: #000;
+	font-family: Verdana, sans-serif;
+	font-size: 95%;
+	
+	background: url(../../Images/arrow4.gif) no-repeat 0 3px;
+	text-align:left;
+	
+	
+	}
+	.nolineBtn
+{
+  
+	font-family: verdana;
+	font-weight: normal;
+	color: navy;
+	font-size: .9em;
+	border:solid 1px #999;	
+	
+	padding: 2px;
+	font-weight:bold;
+	background-color:White;
+	
+}
+#footer {
+    width:100%;
+	font-size: 12px;	
+	padding:5px;
+    text-align:center;
+    background-color:#e2e2e2;
+}	
+.heading2 {
+	color: #506c83;
+	font-weight: bold;
+	font-size: 14px;
+	text-align:center
+}
+	
+.redheading {
+	color: #BA3516;
+	font-weight: bold;
+	font-size: 13px;
+	text-align:center;
+	padding:4px;
+}
+.blueheading {
+	color: White;
+	font-weight: bold;
+	font-size: 12px;
+	text-align:left;
+	padding:3px;
+	background-../../Images: url(../../Images/login_bkgd2.jpg);
+}	
+.leftLabel {		
+	
+		background-color:transparent;		
+		font-size:.7em;
+		color: #000000;
+		font-weight:bold;
+		padding:5px;
+		text-align:left;
+		
+	}
+
+.normalTextBox {
+	
+		background-color:transparent;
+		background-../../Images:none;
+		font-size:.7em;
+		font-weight:normal;
+		padding: 2px;
+	}
+	/* for the customer pager style */
+div.pagination {
+			padding: 3px;
+			margin: 3px;
+			font-size: 10px;
+			text-align:center;
+		}
+		div.pagination a {
+			padding: 2px 5px 2px 5px;
+			margin: 2px;
+			border: 1px solid #AAAADD;
+			text-decoration: none; /* no underline */
+			color: #000099;
+		}
+		div.pagination a:hover, div.pagination a:active {
+			border: 1px solid #000099;
+			color: #000;
+		}
+		div.pagination span.current {
+			padding: 2px 5px 2px 5px;
+			margin: 2px;
+			border: 1px solid #999999;
+			font-weight: bold;
+			background-color: #999999;
+			color: #FFF;
+		}
+		div.pagination span.disabled {
+			padding: 2px 5px 2px 5px;
+			margin: 2px;
+			border: 1px solid #EEE;
+			color: #DDD;
+		}
+		/*end of custom pager style*/
+.reqMark
+{
+	color: Red;
+	font-size:10px;	
+	font-weight:600;
+	}
+.reqField
+{
+	background-color: #fadfdf;
+	}
+.errortext 
+{
+	font-size: 11px;
+	color:#FF0000;
+	/*color:Red;*/
+	}	
+.suggestedtext
+{
+	font-size: 11px;
+	color:#13b507;
+	}
+.footerTop
+{
+	border-top: #000366 1px solid;
+	font-weight:bold;
+	font-size: 11px;
+	text-align:center;
+	}
+
+.ui-widget
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px !important;
+	font-weight: bold;	
+}
+.text7
+{
+	/*font-family: Arial, Geneva, Helvetica, sans-serif;*/ 
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: .7em;
+	text-indent: 0px;
+	
+	}
+	.text11fix
+{
+	/*font-family: Arial, Geneva, Helvetica, sans-serif;*/ 
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-indent: 0px;
+	
+	}
+.text14fix
+{
+	/*font-family: Arial, Geneva, Helvetica, sans-serif;*/ 
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	text-indent: 0px;
+	
+	}
+	.ListSearchExtenderPrompt
+{
+	font-style:italic;
+	color:Gray;
+	background-color:white;
+	font-size: 10px;
+}
+.submit {
+	
+	font-family: verdana;
+	font-weight: normal;
+	color: #000000;
+	font-size: 1.0em;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #999;
+	padding: 2px;
+	
+}
+.submitGreen {
+	background: url(../Images/bkgd_greenButtonform.png);
+	font-family: verdana;
+	font-weight: normal;
+	color: #000000;
+	font-size: .9em;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #006600;
+	padding: 2px;
+}
+.submitBlue {
+	background: url(../Images/bkgd_blueButtonform.png);
+	font-family: verdana;
+	font-weight: normal;
+	color: #000000;
+	font-size: .9em;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #006699;
+	padding: 2px;
+}
+.submitYellow {
+	background: url(../Images/bkgd_yellowButtonform.png);
+	font-family: verdana;
+	font-weight: normal;
+	color: #000000;
+	font-size: .9em;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #666600;
+	padding: 2px;
+}
+.submitRed {
+	background: url(../Images/bkgd_redButtonform.png);
+	font-family: verdana;
+	font-weight: normal;
+	color: #000000;
+	font-size: .9em;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #663333;
+	padding: 2px;
+}
+.btnInvisible
+{
+	display:none
+	
+	}
+.btnPrint {
+	
+	background-color:#8ca2c6;
+	font-family: verdana;
+	font-weight: normal;
+	color: white;
+	font-size: .9em;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #999;
+	padding: 2px;
+}
+.btnExportToPDF {
+	
+	background-color:#b36969;
+	font-family: verdana;
+	font-weight: normal;
+	color: white;
+	font-size: .9em;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #999;
+	padding: 2px;
+}
+.btnExportToExcel {
+	
+	background-color:#5aa977;
+	font-family: verdana;
+	font-weight: normal;
+	color: white;
+	font-size: .9em;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #999;
+	padding: 2px;
+}
+.btnNotify {
+	
+	background-color:#5cde42;
+	font-family: verdana;
+	font-weight: bold;
+	color: white;
+	font-size: .9em;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #999;
+	padding: 2px;
+}
+.btnAbate {
+	
+	/*background-color:#fec004;*/
+	background-color:yellow;
+	font-family: verdana;
+	font-weight: bold;
+	color: black;
+	font-size: .9em;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #999;
+	padding: 2px;
+}
+.btnFinish {
+	
+	background-color:#f30b2c;
+	font-family: verdana;
+	font-weight: bold;
+	color: black;
+	font-size: .9em;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #999;
+	padding: 2px;
+}
+td {
+	vertical-align: top;
+}
+/*End Text Area*/
+
+/*Link Boxes*/
+dl {/*the box on left navigation and bottom ../../Images*/
+	width: 200px;
+	margin: 0 0 0 0;
+	padding: 0;
+	/*background: #ccc url(../../Images/box_bttm2.png) no-repeat bottom left;*/
+	font-size: .7em;
+	
+	/*add the light color and corner on bottom log out link*/
+}
+dt {/*the small box title and top ../../Images*/
+	margin: 0 0 10px 0;
+	padding: 10px 10px 10px 10px;
+	font-size: 100%;
+	font-weight:bold;
+	text-align:center;
+	color: #BA3516;
+	border-bottom: 1px solid #fff;
+	background: #999 url(../../Images/box_top2.png) no-repeat top left;
+}
+dd {/*the small box element*/
+	margin: 0 0 0 10px;
+	padding: 2px 15px 10px 18px;
+	color: #000;
+	font-family: Verdana, sans-serif;
+	font-size: 90%;
+	background: url(../../Images/arrow4.gif) no-repeat 0 3px;
+	text-align:left;
+}
+#grey dt {
+	background-color: #999;
+}
+#grey {
+	background-color: #ccc;
+}
+#grey a {
+	color: #000;
+	text-decoration: none;
+}
+#grey a:hover {
+	color: #FFF;
+	text-decoration: none;
+}
+
+#blue {
+	background-color: #bdcce6;
+}
+#blue a {
+	color: #000;
+	text-decoration: none;
+}
+#blue a:hover {
+	color: #FFF;
+	text-decoration: none;
+}
+#blue dt {
+	background-color: #8ca2c6;/*dark blue*/
+}
+#red {
+	background-color: #cfa0a0;
+}
+#red dt {
+	background-color: #b36969;
+}
+#green {
+	background-color: #97c9a9;
+}
+#green dt {
+	background-color: #5aa977;
+}
+
+
+
+
+
+.redTitle
+{
+	color: #f30b2c;
+	font-weight: bold;
+	font-size: 14px;
+	text-align:Left;
+	padding:4px;
+}
+
+.yellowTitle
+{
+	color: #f0b503;
+	font-weight: bold;
+	font-size: 14px;
+	text-align:Left;
+	padding:4px;
+}
+
+.greenTitle
+{
+	color: #33bb18;
+	font-weight: bold;
+	font-size: 14px;
+	text-align:Left;
+	padding:4px;
+}
+.appTitle {
+	text-align:center;
+    font-size:20px;
+    color:#000;
+    font-weight: bold;
+   
+}
+.sectiontitle
+{
+   padding: 6px 6px 6px 3px;
+   background-color: #8d2d23;
+   color: white;
+   font-size: 12px;
+   font-weight: bold;	
+   text-transform: uppercase;
+}
+
+.popup_Buttons
+{
+	margin:10px;
+}
+.popup_Titlebar {
+	
+	height: 29px;
+	
+	background-color: #fab845;
+}
+.TitlebarLeft 
+{
+	float:left;
+	padding-left:5px;
+	padding-top:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:12px;
+	color:#FFFFFF;
+}
+.TitlebarRight
+{	
+	background:url(../../Images/cross_icon_normal.png);
+	background-position:right;
+	background-repeat:no-repeat;
+	height:15px;
+	width:16px;
+	float:right;
+	cursor:pointer;
+	margin-right:5px;
+	margin-top:5px;
+}
+.hr
+{
+ color:#fab845;
+ 
+}
+.BoldedWONumber
+{
+	color: Red;
+	font-weight:bold;
+	font-size:110%;
+	}
+	
+/* ajax modal dialog styles */
+.modalBackground {
+	background-color: Gray;
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+}
+.modalBox {
+	background-color : #f5f5f5;
+	border-width: 3px;
+	border-style: solid;
+	border-color: #f47b20;
+	padding: 3px;
+}
+.modalBox caption {
+	background-../../Images: url(../../Imagess/window_titlebg.gif);
+	background-repeat:repeat-x;
+}
+.divCol{
+	font-weight:bold;
+	float:left; 
+	width:120px;
+	text-align:right;
+	margin-right:10px; 
+	white-space:nowrap;
+}
+/*no width on the last col so it will expand*/
+.divColLast{
+	float:left; 
+	white-space:nowrap;
+}
+.caption, table caption {
+	background-color: #aaa;
+	background-../../Images: url('../../Images/tilebg_tablecaption.gif');
+	color: #000;
+	font-size: 12pt;
+	font-weight: bold;
+	border: 0;
+	border-bottom: solid 1px #737373;
+	white-space: nowrap;
+	text-align: center;
+}
+.clearer {
+	clear: both;
+	overflow: hidden;
+	background-color:transparent;
+	filter:alpha(opacity=0);
+	opacity:0.0;
+	height: 1px;
+	margin: 1px 1px 1px 1px;
+	max-height: 2px;
+}
+
+#divDashboard {
+    background-image: url(Images/Circle.png);
+    background-size: 800 800;
+}
+
+#admin {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    left: 430px;
+    top: 150px;
+}
+
+#map {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    left: 430px;
+    top: 380px;
+}
+
+#track {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    left: 660px;
+    top: 150px;
+}
+
+#dispatch {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    left: 660px;
+    top: 380px;
+}
+
+
+.surveyTableLeftCell{
+   width: 250px;
+   background-color: #eeeeee;
+   padding-left:10px;
+    
+   }
+
+.surveyTableRightCell{
+   
+    padding-left:10px;
+   }
+
+
